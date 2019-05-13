@@ -69,7 +69,7 @@ public class Main {
         System.out.println(service4.getLatePurchases());
         System.out.println("C");
         System.out.println(service4.getSpecialShops());
-        System.out.println("D");
+        System.out.println("D ");
         System.out.println(service4.getSpecialPurchases());
 
         System.out.println("_____________________");
