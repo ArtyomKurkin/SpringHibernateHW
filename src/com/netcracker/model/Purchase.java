@@ -1,7 +1,7 @@
 package com.netcracker.model;
 
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -10,6 +10,9 @@ import java.sql.Date;
 @Entity
 @Table(name="purchasee")
 @Data
+@NoArgsConstructor
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,35 +20,31 @@ public class Purchase {
     private int id;
 
     @Column(name="date")
+    @NonNull
     private Date date;
 
     @ManyToOne
     @JoinColumn(name="shop")
+    @NonNull
     private Shop shop;
 
     @ManyToOne
     @JoinColumn(name="customer")
+    @NonNull
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name="book")
+    @NonNull
     private Book book;
 
     @Column(name="number")
+    @NonNull
     private int number;
 
     @Column(name="total")
+    @NonNull
     private int total;
 
-    public Purchase(Date date, Shop shop, Customer customer, Book book, int number, int total) {
-        this.date = date;
-        this.shop = shop;
-        this.customer = customer;
-        this.book = book;
-        this.number = number;
-        this.total = total;
-    }
 
-    public Purchase() {
-    }
 }

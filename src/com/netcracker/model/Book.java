@@ -1,13 +1,16 @@
 package com.netcracker.model;
 
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="book")
 @Data
+@NoArgsConstructor
+@RequiredArgsConstructor
+@AllArgsConstructor
 public class Book {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -15,26 +18,22 @@ public class Book {
     private int id;
 
     @Column(name = "title")
+    @NonNull
     private String title;
 
     @Column(name="cost")
+    @NonNull
     private int cost;
 
     @Column(name="storage")
+    @NonNull
     private String storage;
 
     @Column(name="count")
+    @NonNull
     private int count;
 
 
-    public Book(String title, int cost, String storage, int count) {
-        this.title = title;
-        this.cost = cost;
-        this.storage = storage;
-        this.count = count;
-    }
 
-    public Book(){
 
-    }
 }

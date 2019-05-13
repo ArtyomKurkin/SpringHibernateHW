@@ -1,6 +1,10 @@
 package com.netcracker;
 
 import com.netcracker.config.SpringConfig;
+import com.netcracker.model.Book;
+import com.netcracker.model.Customer;
+import com.netcracker.model.Purchase;
+import com.netcracker.model.Shop;
 import com.netcracker.service.BookService;
 import com.netcracker.service.CustomerService;
 import com.netcracker.service.PurchaseService;
@@ -8,6 +12,7 @@ import com.netcracker.service.ShopService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 
+import java.sql.Date;
 
 
 public class Main {
@@ -22,7 +27,7 @@ public class Main {
         secondTask(service1,service2,service4);
         thirdTask(service1,service2,service3);
         fourthTask(service4);
-        fifthTask(service1,service2,service3,service4);
+        fifthTask(service4);
 
     }
 
@@ -61,7 +66,7 @@ public class Main {
         System.out.println("_____________________");
     }
 
-    private static void fifthTask(BookService service1, CustomerService service2, ShopService service3, PurchaseService service4){
+    private static void fifthTask(PurchaseService service4){
         System.out.println("The fifth task:");
         System.out.println("A");
         System.out.println(service4.getTopPurchases());

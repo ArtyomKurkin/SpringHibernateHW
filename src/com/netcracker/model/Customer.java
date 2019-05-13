@@ -1,13 +1,17 @@
 package com.netcracker.model;
 
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="Customer")
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@RequiredArgsConstructor
+
 public class Customer {
 
     @Id
@@ -15,22 +19,18 @@ public class Customer {
     @JoinColumn(name="id")
     private int id;
 
-    @Column(name = "surname", nullable=false)
+    @Column(name = "surname")
+    @NonNull
     private String surname;
 
-    @Column(name = "district", nullable=false)
+    @Column(name = "district")
+    @NonNull
     private String district;
 
-    @Column(name="discount", nullable=false)
+    @Column(name="discount")
+    @NonNull
     private int discount;
 
-    public Customer(String surname, String district, int discount) {
-        this.surname = surname;
-        this.district = district;
-        this.discount = discount;
-    }
 
-    public Customer() {
-    }
 }
 
